@@ -1,6 +1,0 @@
-{
-  "build": {
-    "use": "@vercel/static-build",
-    "src": "Dockerfile"
-  }
-}
