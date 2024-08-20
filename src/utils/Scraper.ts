@@ -1,12 +1,13 @@
-import { Browser, chromium, Locator, Page } from 'playwright';
 import { Attachment, Bid, File } from '@/typedefs';
+import playwright from 'playwright-aws-lambda';
+import { Browser, Locator, Page } from 'playwright-core';
 
 export class Scraper {
   private browser?: Browser;
   private page?: Page;
 
   async init() {
-    this.browser = await chromium.launch();
+    this.browser = await playwright.launchChromium();
     this.page = await this.browser.newPage();
   }
 
